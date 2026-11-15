@@ -1092,3 +1092,18 @@ function reply(body, status, asText) {
     headers: { "Content-Type": "application/json; charset=utf-8" },
   });
 }
+export default {
+  async scheduled(controller, env, ctx) {
+    // 匹配你设置的9分钟间隔Cron表达式
+    if (controller.cron === "*/9 * * * *") {
+      // 调用Instabox Activity Lease续租接口
+      await fetch("https://instabox.example/lease", {
+        headers: { "Authorization": `Bearer ${env.INSTABOX_API_KEY}` }
+      });
+    }
+  },
+  // 保留原有的fetch处理器，兼容手动访问触发
+  async fetch(request, env, ctx) {
+    return new Response("Instabox保活服务运行正常");
+  }
+};
