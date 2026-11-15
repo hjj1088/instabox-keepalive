@@ -4,7 +4,7 @@
 // 单账号：只设 INSTABOX_API_KEY，可选 INSTABOX_MACHINE 指定机器。
 // 多账号：第 N 个账号的变量名 = 单账号变量名 + _N，加一个账号就多加一个 Secret：
 //
-//   INSTABOX_API_KEY      1 号账号的 key（也可以写成 INSTABOX_API_KEY_1）
+INSTABOX_API_KEY      ibk_saktnzklv5mgp6ccvrboacg5ohyhf3zzbefolvcxwc3flmeupv2q
 //   INSTABOX_API_KEY_2    2 号账号的 key
 //   INSTABOX_API_KEY_3    3 号账号的 key ……
 //
